@@ -15,7 +15,7 @@ const toggleSwitchDriverFactory = ({element, wrapper, component}) => {
     isXSmall: () => isClassExists(element, 'toggleSwitchXSmall'),
     isSmall: () => isClassExists(element, 'toggleSwitchSmall'),
     isLarge: () => !isClassExists(element, 'toggleSwitchXSmall') && !isClassExists(element, 'toggleSwitchSmall'),
-    fillColor: () => getComputedStyle(element.querySelector('path'), null).getPropertyValue('fill'),
+    fillColor: () => getComputedStyle(element.querySelector('path')).getPropertyValue('fill'),
     setProps: props => {
       const ClonedWithProps = React.cloneElement(component, Object.assign({}, component.props, props), ...(component.props.children || []));
       ReactDOM.render(<div ref={r => element = r}>{ClonedWithProps}</div>, wrapper);
