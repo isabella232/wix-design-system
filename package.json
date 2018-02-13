@@ -22,7 +22,8 @@
     "storybook": "start-storybook -p 6006",
     "release": "node scripts/npm-release.js",
     "export-components": "import-path --path src",
-    "lint": "haste lint"
+    "lint": "haste lint",
+    "surge-github-autorelease": "surge-github-autorelease"
   },
   "yoshi": {
     "features": {
@@ -82,6 +83,7 @@
     "regenerator-runtime": "^0.11.0",
     "semver": "^5.4.1",
     "sinon": "^1.17.6",
+    "surge-github-autorelease": "^1.0.0",
     "svg2react-icon": "^1.0.0",
     "wait-for-cond": "^1.0.3",
     "wix-storybook-utils": "^1.0.0"
