@@ -365,7 +365,7 @@ Input.propTypes = {
   textOverflow: PropTypes.string,
 
   /** The theme of the input */
-  theme: PropTypes.oneOf(['normal', 'paneltitle', 'material', 'amaterial', 'flat', 'flatdark']),
+  theme: PropTypes.oneOf(['normal', 'tags', 'paneltitle', 'material', 'amaterial', 'flat', 'flatdark']),
   title: PropTypes.string,
 
   /** Placement of the error and help tooltips (supported only for amaterial them for now) */
