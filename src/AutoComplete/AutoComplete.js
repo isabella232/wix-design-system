@@ -1,9 +1,9 @@
 import React from 'react';
-import {Autocomplete} from 'wix-ui-backoffice/Autocomplete';
 import DropdownLayout from '../DropdownLayout';
+import {bool} from 'prop-types';
+import {Autocomplete} from 'wix-ui-backoffice/Autocomplete';
 
 const transformOptions = options => {
-  console.log(options);
   return (options || [])
     .map(x =>
       x.value === '-' ?
@@ -11,12 +11,17 @@ const transformOptions = options => {
       Autocomplete.createOption(x.id, !!x.disabled, true, x.value, () => x.value));
 };
 
-const AutoComplete = ({options}) => {
-  return (<Autocomplete options={transformOptions(options)}/>);
+const AutoComplete = ({options, disabled}) => {
+  return (
+    <Autocomplete
+      disabled={disabled}
+      options={transformOptions(options)}
+      />);
 };
 
 AutoComplete.propTypes = {
-  options: DropdownLayout.propTypes.options
+  options: DropdownLayout.propTypes.options,
+  disabled: bool
 };
 
 export default AutoComplete;
