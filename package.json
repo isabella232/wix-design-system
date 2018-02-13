@@ -22,8 +22,7 @@
     "storybook": "start-storybook -p 6006",
     "release": "node scripts/npm-release.js",
     "export-components": "import-path --path src",
-    "lint": "haste lint",
-    "surge-github-autorelease": "surge-github-autorelease"
+    "lint": "haste lint"
   },
   "yoshi": {
     "features": {
@@ -83,7 +82,7 @@
     "regenerator-runtime": "^0.11.0",
     "semver": "^5.4.1",
     "sinon": "^1.17.6",
-    "surge-github-autorelease": "^1.0.0",
+    "surge-github-autorelease": "^1.0.1",
     "svg2react-icon": "^1.0.0",
     "wait-for-cond": "^1.0.3",
     "wix-storybook-utils": "^1.0.0"
@@ -108,22 +107,22 @@
     "lodash": "^4.17.4",
     "moment": "2.19.2",
     "omit": "^1.0.1",
-    "popper.js": "^1.10.8",
+    "popper.js": "^1.13.0",
     "prop-types": "^15.5.8",
     "rc-slider": "^8.0.2",
     "react-autosuggest": "^7.0.1",
     "react-collapse": "^4.0.3",
     "react-datepicker": "^0.53.0",
-    "react-jss": "^8.0.0",
+    "react-jss": "^8.3.3",
     "react-modal": "^2.2.4",
     "react-motion": "^0.4.7",
     "react-onclickoutside": "^5.7.1",
     "react-remarkable": "^1.1.1",
     "react-transition-group": "^2.2.1",
     "slate": "^0.20.3",
-    "wix-animations": "^1.0.141",
-    "wix-ui-backoffice": "^1.0.0",
-    "wix-ui-test-utils": "^1.0.0"
+    "wix-animations": "^1.0.183",
+    "wix-ui-backoffice": "^1.0.69",
+    "wix-ui-test-utils": "^1.0.63"
   },
   "jest": {
     "setupFiles": [
