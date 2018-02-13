@@ -1,22 +1,22 @@
-import {func} from 'prop-types';
-import InputWithOptions from '../InputWithOptions/InputWithOptions';
+import React from 'react';
+import {Autocomplete} from 'wix-ui-backoffice/Autocomplete';
+import DropdownLayout from '../DropdownLayout';
 
-class AutoComplete extends InputWithOptions {
-  static propTypes = {
-    ...InputWithOptions.propTypes,
-    predicate: func
-  }
+const transformOptions = options => {
+  console.log(options);
+  return (options || [])
+    .map(x =>
+      x.value === '-' ?
+      Autocomplete.createDivider() :
+      Autocomplete.createOption(x.id, !!x.disabled, true, x.value, () => x.value));
+};
 
-  static defaultProps = {
-    ...InputWithOptions.defaultProps,
-    predicate: () => true
-  }
+const AutoComplete = ({options}) => {
+  return (<Autocomplete options={transformOptions(options)}/>);
+};
 
-  dropdownAdditionalProps() {
-    const {options, predicate} = this.props;
-    const filterFunc = this.state.isEditing ? predicate : () => true;
-    return {options: options.filter(filterFunc)};
-  }
-}
+AutoComplete.propTypes = {
+  options: DropdownLayout.propTypes.options
+};
 
 export default AutoComplete;
