@@ -1,5 +1,7 @@
 import rangeRight from 'lodash/rangeRight';
 
+import {LocaleUtils} from 'react-day-picker';
+
 import setDay from 'date-fns/set_day';
 import format from 'date-fns/format';
 import en from 'date-fns/locale/en';
@@ -54,13 +56,16 @@ export function createFormatWeekdayLong(locale) {
   });
 }
 
-export function getYears({from = new Date().getFullYear() - 11, to = new Date().getFullYear() + 11} = {}) {
+export function getYears({
+  from = new Date().getFullYear() - 11,
+  to = new Date().getFullYear() + 11
+} = {}) {
   return rangeRight(from, to)
     .map((year, i) => ({value: year, id: i}));
 }
 
-export function getMonths(localeUtils) {
-  return localeUtils.getMonths().map((month, i) => ({value: month, id: i}));
+export function getMonths() {
+  return LocaleUtils.getMonths().map((month, i) => ({value: month, id: i}));
 }
 
 export function formatDate(date, dateFormat, locale) {

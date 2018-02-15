@@ -24,29 +24,9 @@ $navButtonOffset: 10px;
   }
 }
 
-.dropdown-caption-container {
-  display: flex;
-  flex-direction: row;
-  align-content: center;
-  position: relative;
-  justify-content: center;
-  padding: 20px;
-  margin-top: -10px;
-}
-
 .dropdown-container {
   position: relative;
   top: 2px;
-}
-
-.static-caption {
-  position: relative;
-  color: $D80;
-  font-weight: 300;
-  @include FontLight();
-  padding-top: 10px;
-  font-size: 16px;
-  line-height: 1.13;
 }
 
 :global {
@@ -83,7 +63,6 @@ $navButtonOffset: 10px;
         line-height: 1.13;
         margin: 0;
       }
-
     }
 
     &-NavBar {
@@ -222,6 +201,5 @@ $navButtonOffset: 10px;
         border-radius: 50%;
       }
     }
-
   }
 }
