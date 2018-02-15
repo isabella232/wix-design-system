@@ -151,9 +151,9 @@ $material-gap: 8px;
 
     .input {
       @include FontLight();
-      @include Placeholder(rgba(0, 0, 0, 0));
+      opacity: 0;
       z-index: 1;
-      transition: border-bottom .3s, border-color .3s, border-width .3s, border .3s ease-in-out;
+      transition: border-bottom .3s, border-color .3s, border-width .3s, border .3s, opacity 0s ease-in-out;
       line-height: 1;
       display: block;
       margin-top: 0;
@@ -171,6 +171,8 @@ $material-gap: 8px;
     &.hasValue {
       .input {
         @include Placeholder($paletteE6);
+        transition: opacity 0.3s ease-in-out;
+        opacity: 1;
       }
       input {
         border-bottom: 0;
@@ -212,10 +214,11 @@ $material-gap: 8px;
         width:100%;
       }
     }
-
-    .input:hover ~ .barBlue, .input.hasHover ~ .barBlue {
-      background-color: #000;
-      transition: 0.3s ease all;
+    &:hover:not(.disabled) {
+      .bar, .input:hover ~ .barBlue, .input.hasHover ~ .barBlue {
+        background-color: #000;
+        transition: 0.3s ease all;
+      }
     }
 
     &.hasError {

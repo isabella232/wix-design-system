@@ -13,13 +13,14 @@ $header-padding: 27px 30px 26px;
 
   .container {
     flex-grow: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-flow: column;
   }
 
   .title {
     @extend .h2;
-    height: 100%;
-    display: flex;
-    align-items: center;
     line-height: 1.2;
   }
 

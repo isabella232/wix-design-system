@@ -80,6 +80,32 @@ describe('Selector', () => {
     expect(driver.toggleType()).toBe(toggleType);
   });
 
+  describe('given image size', () => {
+    const sizesAndTestkitMethods = [
+      ['tiny', 'isImageTiny'],
+      ['small', 'isImageSmall'],
+      ['portrait', 'isImagePortrait'],
+      ['large', 'isImageLarge'],
+      ['cinema', 'isImageCinema']
+    ];
+
+    sizesAndTestkitMethods.forEach(([size, method]) => {
+      it(`should set correct className for "${size}"`, () => {
+        const driver = createDriver(
+          <Selector
+            {...{
+              ...defaultProps,
+              imageSize: size,
+              image: <img src="img.png"/>
+            }}
+            />
+        );
+
+        expect(driver[method](size)).toBe(true);
+      });
+    });
+  });
+
   describe('testkit', () => {
     it('should exist', () => {
       const div = document.createElement('div');

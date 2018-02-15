@@ -11,6 +11,7 @@ The PageHeader component is the header implementation that will be changed when 
 | maxWidth | number | null | false | Sets the max width of the header and the content |
 | sidePadding | number | null | false | Sets padding of the sides of the page |
 | gradientClassName | string | null | false | Header background color class name, allows to add a gradient to the header |
+| gradientCoverTail | bool | true | false | Should gradient cover Page.Tail |
 
 ## Children
 | propName | propType | defaultValue | isRequired | description |

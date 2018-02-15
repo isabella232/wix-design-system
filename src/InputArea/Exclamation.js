@@ -7,10 +7,18 @@ import SvgExclamation from '../svg/Exclamation.js';
 const Exclamation = ({errorMessage, tooltipPlacement, onTooltipShow}) =>
   <div className={styles.suffix}>
     <Tooltip
-      dataHook="inputArea-tooltip" disabled={errorMessage.length === 0}
-      placement={tooltipPlacement} onShow={onTooltipShow} alignment="center"
-      hideDelay={100} content={errorMessage} moveBy={{x: 0, y: -10}} overlay="" maxWidth="250px"
+      dataHook="inputArea-tooltip"
+      disabled={errorMessage.length === 0}
+      placement={tooltipPlacement}
+      onShow={onTooltipShow}
+      alignment="center"
+      hideDelay={100}
+      content={errorMessage}
+      moveBy={{x: 0, y: -10}}
+      overlay=""
+      maxWidth="250px"
       textAlign="left"
+      theme="dark"
       >
 
       <div className={styles.errorIcon}><SvgExclamation width={2} height={11}/></div>
@@ -19,7 +27,7 @@ const Exclamation = ({errorMessage, tooltipPlacement, onTooltipShow}) =>
 
 Exclamation.defaultProps = {
   errorMessage: '',
-  tooltipPlacement: 'right'
+  tooltipPlacement: 'top'
 };
 
 Exclamation.propTypes = {

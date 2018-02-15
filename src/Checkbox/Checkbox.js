@@ -48,7 +48,8 @@ class Checkbox extends WixComponent {
       hover,
       active,
       size,
-      onChange
+      onChange,
+      children
     } = this.props;
 
     const classname = classNames(
@@ -82,9 +83,11 @@ class Checkbox extends WixComponent {
             </div>
           </div>
 
-          <div className={styles.children}>
-            {this.props.children}
-          </div>
+          { children &&
+            <div className={styles.children}>
+              {children}
+            </div>
+          }
         </Label>
       </div>
     );

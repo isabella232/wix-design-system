@@ -13,12 +13,17 @@ Types of changes:
 1. **Breaking** for breaking changes
 
 
-## Next Release
+## 2.0.23 - 2018-02-14
 ### Fixed
-- 
+- `<RadioGroup/>` - Fix radio button width (#1457)
+- `<Input/>` - Amaterial theme fix, added hover and fade in / out [#1445](https://github.com/wix/wix-style-react/pull/1445)
+- `<InputArea/>` - on error tooltip use `theme="dark"` & default `tooltipPlacement="top"` [1456](https://github.com/wix/wix-style-react/pull/1456)
+- `<StatsWidget/>` - fix padding issues [#1446](https://github.com/wix/wix-style-react/pull/1446)
+- `<GoogleAddressInput/>` fix ocasionally missing street number [#1435](https://github.com/wix/wix-style-react/pull/1435)
 
-### Added
-- 
+### Changed
+- `<Notification/>` - remove size prop [#1448](https://github.com/wix/wix-style-react/pull/1448)
+- `<PopoverMenuItem/>` - add size prop [#1437](https://github.com/wix/wix-style-react/pull/1437)
 
 ## 2.0.22 - 2018-02-11
 ### Fixed

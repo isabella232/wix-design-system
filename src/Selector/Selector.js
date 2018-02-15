@@ -10,10 +10,6 @@ import ExtraText from './ExtraText';
 import ExtraIcon from './ExtraIcon';
 import ProgressBar from './ProgressBar';
 
-const toggleStyle = {
-  display: 'inline-block'
-};
-
 class Selector extends WixComponent {
   static propTypes = {
     id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
@@ -38,12 +34,14 @@ class Selector extends WixComponent {
     isSelected: false,
     toggleType: 'radio',
     imageSize: 'large',
-    imageShape: 'rectangular'
+    imageShape: 'rectangular',
+    onToggle: i => i
   };
 
-  toggle(id) {
-    this.props.onToggle && this.props.onToggle(id);
-  }
+  radioButtonAndImageMargins = '57px';
+
+  _onClick = id => () =>
+    this.props.onToggle(id);
 
   render() {
     const {
@@ -57,38 +55,49 @@ class Selector extends WixComponent {
       id,
       toggleType
     } = this.props;
-    let toggle;
-    if (toggleType === 'checkbox') {
-      toggle = <Checkbox dataHook="toggle" style={toggleStyle} checked={isSelected}/>;
-    } else {
-      toggle = <RadioButton dataHook="toggle" style={toggleStyle} checked={isSelected}/>;
-    }
+
     return (
       <li
-        className={styles.selector}
-        onClick={() => this.toggle(id)}
+        className={styles.root}
+        onClick={this._onClick(id)}
         >
-        <div className={styles.main}>
-          {toggle}
-          {image &&
-            <div
-              data-hook="selector-image"
-              className={classNames(styles.image, styles[imageSize], styles[imageShape])}
-              >
-              {image}
-            </div>
+        { toggleType === 'checkbox' ?
+          <Checkbox dataHook="toggle" checked={isSelected}/> :
+          <RadioButton dataHook="toggle" checked={isSelected}/>
+        }
+
+        {image &&
+          <div
+            data-hook="selector-image"
+            className={classNames(styles.image, styles[imageSize], styles[imageShape])}
+            children={image}
+            />
+        }
+
+        <div className={styles.titles}>
+          <Text
+            appearance="T1"
+            dataHook="selector-title"
+            ellipsis
+            children={title}
+            />
+
+          {subtitle &&
+            <Text
+              appearance="T3.1"
+              dataHook="selector-subtitle"
+              ellipsis
+              children={subtitle}
+              />
           }
-          <div>
-            <div>
-              <Text appearance="T1" dataHook="selector-title">{title}</Text>
-            </div>
-            {subtitle && <div><Text appearance="T3" dataHook="selector-subtitle">{subtitle}</Text></div>}
-          </div>
         </div>
+
         {extraNode &&
-          <div className={styles.extra} data-hook="selector-extra-node">
-            {extraNode}
-          </div>
+          <div
+            className={styles.extra}
+            data-hook="selector-extra-node"
+            children={extraNode}
+            />
         }
       </li>
     );

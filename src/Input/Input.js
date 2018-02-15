@@ -334,7 +334,7 @@ Input.propTypes = {
   /** called when user pastes text from clipboard (using mouse or keyboard shortcut) */
   onPaste: PropTypes.func,
 
-  /** onShow prop for the error and help tooltips (supported only for amaterial them for now */
+  /** onShow prop for the error and help tooltips (supported only for amaterial theme for now) */
   onTooltipShow: PropTypes.func,
 
   /** Placeholder to display */
@@ -366,9 +366,11 @@ Input.propTypes = {
 
   /** The theme of the input */
   theme: PropTypes.oneOf(['normal', 'tags', 'paneltitle', 'material', 'amaterial', 'flat', 'flatdark']),
+
+  /** The material design style floating label for input (supported only for amaterial theme for now) */
   title: PropTypes.string,
 
-  /** Placement of the error and help tooltips (supported only for amaterial them for now) */
+  /** Placement of the error and help tooltips (supported only for amaterial theme for now) */
   tooltipPlacement: PropTypes.string,
   type: PropTypes.string,
   unit: PropTypes.string,

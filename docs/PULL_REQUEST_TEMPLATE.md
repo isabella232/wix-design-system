@@ -1,14 +1,16 @@
-## Before you request a review, please make sure to check the following boxes:
+### What changed
 
-- [ ] Explain what has changed.
-- [ ] Explain why the change is needed.
-- [ ] Added tests.
-- [ ] Update documentation.
-- [ ] Merge master with no conflicts.
-- [ ] Make sure the build is passing on ci.
-- [ ] If this pr closes any issue, please add a github link to close it.
-- [ ] If you changed something in the product design/UX, you got the approval of [Ben Benhorin](https://wix.slack.com/messages/@benb).
+...
+
+### Why it changed
+
+...
+
+---
+
+- [ ] Change is tested
+- [ ] Change is documented
+- [ ] Build is green
+- [ ] Change of UX is approved by [wuwa](https://github.com/wuwa) or [milkyfruit](https://github.com/milkyfruit)
 
 ### Thanks for contributing :)
-
-
