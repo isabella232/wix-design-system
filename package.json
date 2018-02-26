@@ -22,7 +22,8 @@
     "storybook": "start-storybook -p 6006",
     "release": "node scripts/npm-release.js",
     "export-components": "import-path --path src",
-    "lint": "haste lint"
+    "lint": "haste lint",
+    "chromatic": "chromatic test --storybook-addon  --script-name=start --port=6006 --app-code=f9lbfi0h7x"
   },
   "yoshi": {
     "features": {
@@ -74,6 +75,7 @@
     "import-path": "^1.0.0",
     "jquery": "^1.12.4",
     "react": "^15.5.4",
+    "react-chromatic": "^0.7.10",
     "react-docgen": "^2.15.0",
     "react-dom": "^15.5.4",
     "react-element-to-jsx-string": "^13.0.0",

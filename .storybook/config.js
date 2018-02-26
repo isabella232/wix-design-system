@@ -1,5 +1,6 @@
 import {configure, storiesOf} from '@storybook/react';
 import {setOptions} from '@storybook/addon-options';
+import 'react-chromatic/storybook-addon';
 
 function loadStories() {
   if (global.self === global.top) {
